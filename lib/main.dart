@@ -8,6 +8,7 @@ import 'package:advicer/themes.dart';
 import 'package:provider/provider.dart';
 
 // import das telas
+import 'package:advicer/application/pages/home/home.dart';
 import 'application/core/services/theme_services.dart';
 
 void main() {
@@ -21,7 +22,7 @@ void main() {
             theme: Themes.lightTheme,
             darkTheme: Themes.darkTheme,
             title: 'Advicer',
-            home: const Placeholder(),
+            home: const Home(),
           );
         },
       ),
