@@ -1,18 +1,17 @@
-part of 'home_bloc.dart';
+part of 'home_cubit.dart';
 
-@immutable
-abstract class HomeState extends Equatable {
+abstract class HomeCubitState extends Equatable {
+  const HomeCubitState();
 
   @override
   List<Object?> get props => [];
-
 }
 
-class HomeInitial extends HomeState {}
+class HomeInitial extends HomeCubitState {}
 
-class HomeStateLoading extends HomeState {}
+class HomeStateLoading extends HomeCubitState {}
 
-class HomeStateLoaded extends HomeState {
+class HomeStateLoaded extends HomeCubitState {
   HomeStateLoaded({ required this.advice });
   final String advice;
 
@@ -20,7 +19,7 @@ class HomeStateLoaded extends HomeState {
   List<Object?> get props => [advice];
 }
 
-class HomeStateError extends HomeState {
+class HomeStateError extends HomeCubitState {
   HomeStateError({ required this.message });
   final String message;
 
