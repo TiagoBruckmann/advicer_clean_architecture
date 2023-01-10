@@ -1,5 +1,5 @@
-// imports nativos
-import 'package:flutter/material.dart';
+// imports dos domain
+import 'package:advicer/domain/usecases/home_usecases.dart';
 
 // import dos pacotes
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,15 +10,15 @@ part 'home_state.dart';
 class HomeCubit extends Cubit<HomeCubitState> {
   HomeCubit() : super(HomeInitial());
 
+  final HomeUseCases _homeUseCases = HomeUseCases();
+
   void homeRequestEvent() async {
     emit(HomeStateLoading());
 
     // execute bussiness logic
-    debugPrint("fake get advice triggered");
-    await Future.delayed(const Duration(seconds: 3), (){});
-    debugPrint("got advice");
+    final advice = await _homeUseCases.getAdvice();
 
-    // emit(HomeStateLoaded(advice: "Fake advice to test BLOC!"));
-    emit(HomeStateError(message: "Error message"));
+    emit(HomeStateLoaded(advice: advice.advice));
+    // emit(const HomeStateError(message: "Error message"));
   }
 }

@@ -12,7 +12,7 @@ class HomeInitial extends HomeCubitState {}
 class HomeStateLoading extends HomeCubitState {}
 
 class HomeStateLoaded extends HomeCubitState {
-  HomeStateLoaded({ required this.advice });
+  const HomeStateLoaded({ required this.advice });
   final String advice;
 
   @override
@@ -20,7 +20,7 @@ class HomeStateLoaded extends HomeCubitState {
 }
 
 class HomeStateError extends HomeCubitState {
-  HomeStateError({ required this.message });
+  const HomeStateError({ required this.message });
   final String message;
 
   @override
