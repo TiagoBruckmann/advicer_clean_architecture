@@ -2,6 +2,7 @@
 import 'dart:convert';
 
 // import dos modelos
+import 'package:advicer/data/exceptions/exceptions.dart';
 import 'package:advicer/data/models/advice_model.dart';
 
 // import dos pacotes
@@ -26,8 +27,11 @@ class HomeRemoteSourceImpl implements HomeRemoteDatasource {
       headers: header,
     );
 
-    final responseBody = jsonDecode(response.body);
+    if ( response.statusCode != 200 ) {
+      throw ServerExceptions();
+    }
 
+    final responseBody = jsonDecode(response.body);
     return AdviceModel.fromJson(responseBody);
   }
 
