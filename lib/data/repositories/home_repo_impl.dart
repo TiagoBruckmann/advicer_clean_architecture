@@ -11,12 +11,13 @@ import 'package:advicer/domain/failures/failure.dart';
 import 'package:dartz/dartz.dart';
 
 class HomeRepoImpl implements HomeRepo{
+  final HomeRemoteDatasource homeRemoteDatasource;
+  HomeRepoImpl({ required this.homeRemoteDatasource });
 
-  final HomeRemoteDatasource _homeRemoteDatasource = HomeRemoteSourceImpl();
   @override
   Future<Either<Failure, AdviceEntity>> getAdviceFromDataSource() async {
     try {
-      final result = await _homeRemoteDatasource.getRandomAdviceFromApi();
+      final result = await homeRemoteDatasource.getRandomAdviceFromApi();
       return right(result);
     } on ServerExceptions catch (e) {
       print("e on => $e");

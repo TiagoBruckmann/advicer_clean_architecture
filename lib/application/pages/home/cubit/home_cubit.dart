@@ -13,15 +13,14 @@ const serverFailureMessage = "Ups, API error. Please try again!";
 const cacheFailureMessage = "Ups, cache failed. Please try again";
 
 class HomeCubit extends Cubit<HomeCubitState> {
-  HomeCubit() : super(HomeInitial());
-
-  final HomeUseCases _homeUseCases = HomeUseCases();
+  HomeCubit({ required this.homeUseCases }) : super(HomeInitial());
+  final HomeUseCases homeUseCases;
 
   void homeRequestEvent() async {
     emit(HomeStateLoading());
 
     // execute bussiness logic
-    final failureOrAdvice = await _homeUseCases.getAdvice();
+    final failureOrAdvice = await homeUseCases.getAdvice();
 
     failureOrAdvice.fold(
       (failure) => emit(HomeStateError(message: _mapFailureToMessage(failure))),

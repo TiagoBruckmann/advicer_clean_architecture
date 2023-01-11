@@ -11,7 +11,14 @@ import 'package:provider/provider.dart';
 import 'package:advicer/application/pages/home/wrapper_provider.dart';
 import 'application/core/services/theme_services.dart';
 
-void main() {
+// import globais
+import 'injection.dart' as injection;
+
+Future<void> main() async {
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await injection.init();
+
   runApp(
     ChangeNotifierProvider(
       create: (create) => ThemeService(),

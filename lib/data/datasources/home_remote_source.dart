@@ -15,6 +15,8 @@ abstract class HomeRemoteDatasource {
 }
 
 class HomeRemoteSourceImpl implements HomeRemoteDatasource {
+  final http.Client client;
+  HomeRemoteSourceImpl({ required this.client });
 
   @override
   Future<AdviceModel> getRandomAdviceFromApi() async {
@@ -22,7 +24,7 @@ class HomeRemoteSourceImpl implements HomeRemoteDatasource {
       "content-Type": "application/json",
     };
     Uri url = Uri.https("api.flutter-community.de","api/v1/advice");
-    final response = await http.get(
+    final response = await client.get(
       url,
       headers: header,
     );

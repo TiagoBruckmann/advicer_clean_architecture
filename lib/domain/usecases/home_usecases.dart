@@ -1,5 +1,6 @@
 // import dos data
 import 'package:advicer/data/repositories/home_repo_impl.dart';
+import 'package:advicer/domain/repositories/home_repo.dart';
 
 // import dos pacotes
 import 'package:dartz/dartz.dart';
@@ -9,13 +10,11 @@ import 'package:advicer/domain/entities/advice_entity.dart';
 import 'package:advicer/domain/failures/failure.dart';
 
 class HomeUseCases {
-
-  final _homeRepo = HomeRepoImpl();
+  final HomeRepo homeRepo;
+  HomeUseCases({ required this.homeRepo });
 
   Future<Either<Failure, AdviceEntity>> getAdvice() async {
-    return _homeRepo.getAdviceFromDataSource();
-
-    // space for business logic
+    return homeRepo.getAdviceFromDataSource();
   }
 
 }
