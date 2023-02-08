@@ -31,3 +31,13 @@ Também é a camada que possui os modelos de dados e comunicações externas.
 - Comunicação com API;
 - Serviços externos;
 - SQLite;
+
+### Testes
+
+A construção dos testes seguem uma devida logica, sendo implementados em um esquema de piramide, onde os mais cruciais surgem como a base da mesma.
+A ordem da piramide é a seguinte:
+
+   /\       Integration test (É os testes de rotas, sistemas terceiros, integrações em geral.)
+  /  \      Golden test (É uma evolução dos testes de widgets)
+ /    \     Widget test (Testa os componentes e as telas da aplicação)
+/______\    Unit Test (Testa as regras de negocio)
