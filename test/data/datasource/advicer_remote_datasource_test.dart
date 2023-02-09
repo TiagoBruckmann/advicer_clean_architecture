@@ -1,10 +1,9 @@
 // import dos test
-import 'package:advicer/data/exceptions/exceptions.dart';
-
 import 'advicer_remote_datasource_test.mocks.dart';
 
 // import dos data
 import 'package:advicer/data/datasources/home_remote_source.dart';
+import 'package:advicer/data/exceptions/exceptions.dart';
 import 'package:advicer/data/models/advice_model.dart';
 
 // import dos pacotes
