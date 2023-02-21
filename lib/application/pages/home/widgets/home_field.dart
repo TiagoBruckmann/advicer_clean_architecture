@@ -23,7 +23,7 @@ class HomeField extends StatelessWidget {
           child: Text(
             '"$advice"',
             textAlign: TextAlign.center,
-            style: themeData.textTheme.bodyText1,
+            style: themeData.textTheme.bodyLarge,
           ),
         ),
       ),

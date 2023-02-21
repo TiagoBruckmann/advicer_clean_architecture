@@ -22,7 +22,7 @@ class ErrorMessage extends StatelessWidget {
         Text(
           message,
           textAlign: TextAlign.center,
-          style: themeData.textTheme.headline1,
+          style: themeData.textTheme.displayLarge,
         ),
       ],
     );

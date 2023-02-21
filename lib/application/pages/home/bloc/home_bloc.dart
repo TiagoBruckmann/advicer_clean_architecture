@@ -14,9 +14,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
       emit(HomeStateLoading());
 
       // execute bussiness logic
-      debugPrint("fake get advice triggered");
       await Future.delayed(const Duration(seconds: 3), (){});
-      debugPrint("got advice");
 
       // emit(HomeStateLoaded(advice: "Fake advice to test BLOC!"));
       emit(HomeStateError(message: "Error message"));

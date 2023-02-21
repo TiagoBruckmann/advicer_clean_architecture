@@ -40,8 +40,8 @@ class Themes {
   );
 
   static const TextTheme _textThemeLight = TextTheme(
-    headline1: _headingTextLight,
-    bodyText1: _bodyTextLight,
+    displayLarge: _headingTextLight,
+    bodyLarge: _bodyTextLight,
   );
 
   // .****************
@@ -51,8 +51,8 @@ class Themes {
   static final TextStyle _bodyTextDark = _bodyTextLight.copyWith(color: _textPrimaryDark);
 
   static final TextTheme _textThemeDark = TextTheme(
-    headline1: _headingTextDark,
-    bodyText1: _bodyTextDark,
+    displayLarge: _headingTextDark,
+    bodyLarge: _bodyTextDark,
   );
 
   // .****************
@@ -65,7 +65,9 @@ class Themes {
       color: _appBarLight,
       iconTheme: IconThemeData(color: _iconColor),
     ),
-    bottomAppBarColor: _appBarLight,
+    bottomAppBarTheme: const BottomAppBarTheme(
+      color: _appBarLight,
+    ),
     textTheme: _textThemeLight,
     colorScheme: ColorScheme.light(
       primary: _primaryColorLight,
@@ -85,7 +87,9 @@ class Themes {
       color: _appBarDark,
       iconTheme: const IconThemeData(color: _iconColor),
     ),
-    bottomAppBarColor: _appBarDark,
+    bottomAppBarTheme: BottomAppBarTheme(
+      color: _appBarDark,
+    ),
     textTheme: _textThemeDark,
     colorScheme: ColorScheme.light(
       primary: _primaryColorDark,

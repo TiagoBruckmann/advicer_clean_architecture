@@ -19,11 +19,9 @@ class HomeRepoImpl implements HomeRepo{
     try {
       final result = await homeRemoteDatasource.getRandomAdviceFromApi();
       return right(result);
-    } on ServerExceptions catch (e) {
-      print("e on => $e");
+    } on ServerExceptions {
       return left(ServerFailure());
     } catch (e) {
-      print("e catch => $e");
       return left(GeneralFailure());
     }
   }

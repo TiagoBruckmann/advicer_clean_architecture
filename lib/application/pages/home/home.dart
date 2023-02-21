@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           "Advicer",
-          style: themeData.textTheme.headline1,
+          style: themeData.textTheme.displayLarge,
         ),
         centerTitle: true,
         actions: [
@@ -47,7 +47,7 @@ class Home extends StatelessWidget {
                       return Text(
                         "Your advice is waiting for you!!",
                         textAlign: TextAlign.center,
-                        style: themeData.textTheme.headline1,
+                        style: themeData.textTheme.displayLarge,
                       );
                     } else if ( state is HomeStateLoading ) {
                       return CircularProgressIndicator(

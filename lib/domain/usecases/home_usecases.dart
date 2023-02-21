@@ -1,5 +1,4 @@
 // import dos data
-import 'package:advicer/data/repositories/home_repo_impl.dart';
 import 'package:advicer/domain/repositories/home_repo.dart';
 
 // import dos pacotes

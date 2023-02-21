@@ -7,9 +7,13 @@ abstract class HomeCubitState extends Equatable {
   List<Object?> get props => [];
 }
 
-class HomeInitial extends HomeCubitState {}
+class HomeInitial extends HomeCubitState {
+  const HomeInitial();
+}
 
-class HomeStateLoading extends HomeCubitState {}
+class HomeStateLoading extends HomeCubitState {
+  const HomeStateLoading();
+}
 
 class HomeStateLoaded extends HomeCubitState {
   const HomeStateLoaded({ required this.advice });
