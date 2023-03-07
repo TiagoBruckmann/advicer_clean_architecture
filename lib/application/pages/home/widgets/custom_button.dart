@@ -1,14 +1,10 @@
 // imports nativos
 import 'package:flutter/material.dart';
 
-// import dos pacotes
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-// import das telas
-import 'package:advicer/application/pages/home/cubit/home_cubit.dart';
-
 class CustomButton extends StatelessWidget {
-  const CustomButton({Key? key}) : super(key: key);
+  const CustomButton({ Key? key, required this.onTap }) : super(key: key);
+
+  final Function onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +12,7 @@ class CustomButton extends StatelessWidget {
     final themeData = Theme.of(context);
 
     return InkResponse(
-      onTap: () => BlocProvider.of<HomeCubit>(context).homeRequestEvent(),
+      onTap: onTap.call(),
       child: Material(
         elevation: 20,
         borderRadius: BorderRadius.circular(15),

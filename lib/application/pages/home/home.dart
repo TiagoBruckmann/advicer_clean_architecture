@@ -1,5 +1,4 @@
 // imports nativos
-import 'package:advicer/application/pages/home/cubit/home_cubit.dart';
 import 'package:flutter/material.dart';
 
 // import das telas
@@ -7,9 +6,10 @@ import 'package:advicer/application/pages/home/widgets/custom_button.dart';
 import 'package:advicer/application/pages/home/widgets/error_message.dart';
 import 'package:advicer/application/pages/home/widgets/home_field.dart';
 import 'package:advicer/application/core/services/theme_services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:advicer/application/pages/home/cubit/home_cubit.dart';
 
 // import dos pacotes
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
@@ -66,10 +66,12 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               height: 200,
               child: Center(
-                child: CustomButton(),
+                child: CustomButton(
+                  onTap: () => BlocProvider.of<HomeCubit>(context).homeRequestEvent(),
+                ),
               ),
             ),
           ],
