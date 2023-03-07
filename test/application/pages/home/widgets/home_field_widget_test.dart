@@ -1,5 +1,7 @@
-// import dos pacotes
+// imports nativos
 import 'package:flutter/material.dart';
+
+// import dos pacotes
 import 'package:flutter_test/flutter_test.dart';
 
 // import das telas
