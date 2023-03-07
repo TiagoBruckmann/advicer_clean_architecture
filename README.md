@@ -43,3 +43,27 @@ A ordem da piramide é a seguinte:
  /    \     Widget test (Testa os componentes e as telas da aplicação)
 /______\    Unit Test (Testa as regras de negocio)
 ```
+
+#### Unit test
+É onde se testa as regras de negócio da aplicação, em todas as camadas possiveis, (app, domain, data).
+Na camada app não testamos as telas, somente os gerenciadores de estado.
+
+#### Widget test
+É onde efetuamos todos os testes de telas, widgets customizados e pacotes que tenham alguma exibição na tela.
+
+#### Golden test
+É a mesma coisa que os <b>widgets Test</b>, mas eles são utilizados para funções mais especiais do Flutter para
+que você possa fazer um relacionamento entre o código e os arquivos.
+
+São utilizados para assistir ou comparar duas diferenças de imagens da interface.
+
+Também pode ser utilizado para validar as configurações de build do Flutter, como busca do repositorio padrão do FLUTTER_ROOT, busca de fontes e icones.
+
+```sh
+flutter test --update-goldens
+```
+
+Para configurar os testes no momento do CI/CD é possivel utilizar o pacote alchemist.
+:alembic: [Alchemist](https://pub.dev/packages/alchemist)
+
+#### Integration test
