@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class HomeField extends StatelessWidget {
   const HomeField({ Key? key, required this.advice }) : super(key: key);
   final String advice;
+  static String emptyAdvice = "What should i do with an empty advice?!";
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,7 @@ class HomeField extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric( horizontal: 15, vertical: 20 ),
           child: Text(
-            '"$advice"',
+            ( advice.isNotEmpty ) ? '"$advice"' : emptyAdvice,
             textAlign: TextAlign.center,
             style: themeData.textTheme.bodyLarge,
           ),
