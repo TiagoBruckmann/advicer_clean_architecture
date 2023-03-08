@@ -67,3 +67,9 @@ Para configurar os testes no momento do CI/CD é possivel utilizar o pacote alch
 :alembic: [Alchemist](https://pub.dev/packages/alchemist)
 
 #### Integration test
+
+É muito similar ao teste de widgets, sendo sua principal diferença a possibilidade de rodar os testes de widget em um emulador
+para ver qual o comportamento do app, enquanto o integration test diz que sempre deve ser executado em um dispositivo real,
+para implementar suas regras de back-end, podendo efetuar o teste de ponta a ponta do seu dispositivo até o back-end da aplicação.
+Para testar com diversos Mocks, é preciso verificar se as funções estão todas corretamente implementadas,
+pois cada alteração no back-end da aplicação poderá quebrar os testes e assim corrigi-los.
