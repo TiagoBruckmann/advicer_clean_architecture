@@ -70,7 +70,7 @@ class Home extends StatelessWidget {
               height: 200,
               child: Center(
                 child: CustomButton(
-                  onTap: () => BlocProvider.of<HomeCubit>(context).homeRequestEvent(),
+                  onTap: () => BlocProvider.of<HomeCubit>(context).homeRequestEvent,
                 ),
               ),
             ),
